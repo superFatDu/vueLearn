@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue grammer</title>
+</head>
+<body>
+	<div class="app">
+		<!-- mustache语法 -->
+		{{msg}}
+		<!-- v-html将节点内容替换成内容html -->
+		<div v-html="htmlTemp"></div>
+		<!-- v-model实现数据的双向绑定 -->
+		<input type="text" v-model="msg">
+		<!-- v-show相当于display:none/block -->
+		<!-- 与之对应的v-if如果值为false，则此节点不会渲染-->
+		<div v-show="vShow">隐藏还是显示</div>
+		<!-- v-on=>@ -->
+		<!-- v-bind=>: -->
+		<button type="button" :class="{'red': vShow}" @click="handleVShow">切换状态</button>
+	</div>
+</body>
+<script crossorigin="anonymous" integrity="sha384-av7a40qvniQJlzaRkLiE3dUj08AsYxc//RGG5AoErYdSBDUbyvEHSv8pJ/HZ98H5" src="https://lib.baomitu.com/vue/2.5.21/vue.js"></script>
+<script type="text/javascript">
+	let vm = new Vue({
+		el: ".app", // 挂载节点
+		data: {
+			msg: "hello vue.",
+			htmlTemp: "<h1>v-html</h1>",
+			vShow: true
+		}, // 数据
+		methods: {
+			handleVShow() {
+				this.vShow = !this.vShow;
+			},
+			initData() {
+				// TODO
+			}
+		}, // 方法
+		created() {
+			this.initData();
+		}
+	})
+	/* 生命周期 */
+	// beforeCreate/created/beforeMount/mounted/beforeUpdate/updated/beforeDestory/destoryed
+	// 初始化数据一般放在created生命周期中，更多时候放在挂载完毕mounted生命周期中
+	
+	/* 父子组件传值 */
+	// 父组件向子组件传值 prop
+	// 子组件想父组件传值 $emit
+	// vue中值的传递时单向的，所以从子组件向父组件传值得靠事件触发
+
+	/* ES6 */
+	// 使用箭头函数时，由于上下文的问题，如果一定要使用的话，需要=> let _this = this
+</script>
+</html>
