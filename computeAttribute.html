@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>计算属性</title>
+</head>
+<body>
+<div class="app">
+	我借了你{{money}}元，你还了{{repay}}元，还剩{{left}}元没还。
+</div>
+</body>
+<script crossorigin="anonymous" integrity="sha384-av7a40qvniQJlzaRkLiE3dUj08AsYxc//RGG5AoErYdSBDUbyvEHSv8pJ/HZ98H5" src="https://lib.baomitu.com/vue/2.5.21/vue.js"></script>
+<script type="text/javascript">
+// 应用场景： 具有依赖关系的数据监听
+let vm = new Vue({
+	el: ".app",
+	data: {
+		money: 100,
+		repay: 10
+	},
+	computed: {
+		left: function() {
+			return this.money - this.repay;
+		}
+	}
+})
+
+</script>
+</html>
