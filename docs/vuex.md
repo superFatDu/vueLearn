@@ -45,7 +45,8 @@ view => actions => mutations => state =>view
 ##### 2.拆分
 ```
 1.mkdir store
-2.touch index.js actions.js mutations.js state.js
+2.cd store
+3.touch index.js actions.js mutations.js state.js
 ```
 - index.js
 ```
