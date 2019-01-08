@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vue-slot插槽</title>
+</head>
+<body>
+<div class="app">
+<slot-comp>
+  <h1 slot="a">This slot a.</h1>
+  <h1 slot="a">This slot b.</h1>
+</slot-comp>
+</div>
+</body>
+<script crossorigin="anonymous" integrity="sha384-av7a40qvniQJlzaRkLiE3dUj08AsYxc//RGG5AoErYdSBDUbyvEHSv8pJ/HZ98H5" src="https://lib.baomitu.com/vue/2.5.21/vue.js"></script>
+<script>
+  let slotComp = {
+    template: "<div>" +
+    "<slot name='a'></slot>" +
+    "<slot name='b'></slot>" +
+    "</div>"
+  };
+  let vm = new Vue({
+    el: ".app",
+    data: {
+
+    },
+    components: {
+      slotComp
+    }
+  });
+  // slot用于公共的组件在复用的时候，如果有一些自定义的内容，可以在引用组件的内部使用
+  // 1.在组件中声明slot，如果有多个可以为slot命名，并在组件中使用
+</script>
+</html>
