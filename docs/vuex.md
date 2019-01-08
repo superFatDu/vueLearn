@@ -41,6 +41,9 @@ new Vue({
 // 这是一个循环
 view => actions => mutations => state =>view
   Dispatch    Commit       Mutate   Render
+
+// 在视图中通过dispatch/commit触发actions/mutations中的方法，
+// 从而改变state中的数据，视图响应变化
 ```
 ##### 2.拆分
 ```
