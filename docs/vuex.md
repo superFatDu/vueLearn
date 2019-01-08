@@ -112,7 +112,7 @@ export default {
 }
 ```
 ##### 3.调用
-- 第一种情况
+- 第一种情况(dispatch/commit)
 ```
 // 在template中的使用
 <button type="button" @click="add">增加</button>
@@ -128,7 +128,7 @@ export default {
 }
 
 ```
-- 第二种情况
+- 第二种情况(mapActions/mapMutations/mapGetters)
 ```
 // 在template中的使用
 <button type="button" @click="add(param)">增加</button>
