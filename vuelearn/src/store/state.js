@@ -1,8 +1,8 @@
-let defaultData = "default";
+let defaultData = 1;
 
 try {
   if(localStorage.defaultData){
-    localStorage = localStorage.defaultData;
+    defaultData = parseInt(localStorage.defaultData);
   }
 } catch (e) {
   console.log(e);

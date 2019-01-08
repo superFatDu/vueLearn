@@ -1,5 +1,8 @@
 export default {
-  defaultTest(ctx) {
-    ctx.commit("defaultTest");
+  add({commit}, param) {
+    commit("add", param);
+  },
+  reduce({commit}, param) {
+    commit("reduce", param);
   }
 }
